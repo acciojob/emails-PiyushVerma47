@@ -31,9 +31,6 @@ public class Workspace extends Gmail{
         // Sorting of meeting according to
         // their finish time.
 
-        // sorting using compartor class and without (compartor or comparable class)
-        //  mycomparator mc = new mycomparator();
-        //  Collections.sort(calendar,mc);
         Collections.sort(calendar,(m1,m2)->{
             return m1.getEndTime().compareTo(m2.getEndTime());
         });
@@ -60,23 +57,6 @@ public class Workspace extends Gmail{
 
         return m.size();
     }
-    class mycomparator implements Comparator<Meeting> {
-        @Override public int compare(Meeting m1, Meeting m2)
-        {
-            if (m1.getEndTime().compareTo(m2.getEndTime())<0) {
 
-                // Return -1 if second object is
-                // bigger than first
-                return -1;
-            }
-            else if (m1.getEndTime().compareTo(m2.getEndTime())>0) {
-
-                // Return 1 if second object is
-                // smaller than first
-                return 1;
-            }
-            return 0;
-        }
-    }
 
 }
